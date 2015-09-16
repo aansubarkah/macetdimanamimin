@@ -1,0 +1,7 @@
+<div class="wrapper">
+    {{#if session.isAuthenticated}}
+        {{partial "application/manager"}}
+    {{else}}
+        {{partial "application/guest"}}
+    {{/if}}
+</div>

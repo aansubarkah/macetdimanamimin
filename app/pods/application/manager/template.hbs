@@ -1,0 +1,77 @@
+<header class="main-header">
+    {{#link-to "application" class="logo"}}Dimana Macet{{/link-to}}
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button -->
+        <!--<a class="sidebar-toggle" href="#" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>-->
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{username}} <span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Change Password</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" {{action 'invalidateSession'}}>Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+<aside class="main-sidebar"><!-- .content -->
+    <div class="main-sidebar">
+        <!-- Inner sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu">
+                <li class="header">Service</li>
+                <li>{{#link-to "journey"}}<span>Direction</span>{{/link-to}}</li>
+                <li class="header">Dynamic Data</li>
+                <li>{{#link-to "traffic"}}<span>Traffic</span>{{/link-to}}</li>
+<!--                <li>{{#link-to "markers"}}<span>Markers</span>{{/link-to}}</li>-->
+                <li class="header">Reference Data</li>
+                <li>{{#link-to "places"}}<span>Places</span>{{/link-to}}</li>
+                <li>{{#link-to "respondents"}}<span>Respondents</span>{{/link-to}}</li>
+                <!-- Optionally, you can add icons to the links -->
+                <li>{{#link-to "users"}}<span>Users</span>{{/link-to}}</li>
+                <li>{{#link-to "weathers"}}<span>Weathers</span>{{/link-to}}</li>
+                <!--<li class="treeview">
+                    <a href="#"><span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="#">Link in level 2</a></li>
+                        <li><a href="#">Link in level 2</a></li>
+                    </ul>
+                </li>-->
+            </ul>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </div>
+    <!-- /.main-sidebar -->
+</aside>
+<!-- /.menu -->
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1></h1>
+    </section>
+    <!-- content header -->
+    <section class="content">
+        {{outlet}}
+    </section>
+</div>
+<footer class="main-footer"><!-- .footer -->
+    <strong>Dimana Macet Dashboard</strong> &copy; 2015 by <a href="http://aansubarkah.net">aansubarkah</a>
+
+    <div class="pull-right">
+        Ver. <strong>1.0.0</strong>
+    </div>
+</footer>
+<!-- /.footer -->

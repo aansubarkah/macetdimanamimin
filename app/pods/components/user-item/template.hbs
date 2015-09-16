@@ -1,0 +1,25 @@
+<td>{{basic-math index "+" firstRowNumber}}</td>
+<td>
+    <span {{action 'toggleAddModal' on='doubleClick'}}{{!--action 'view' on='click'--}}>{{user.username}}</span>
+</td>
+<td>
+    <span {{action 'toggleAddModal' on='doubleClick'}}>{{user.email}}</span>
+</td>
+<td>
+    <span {{action 'toggleAddModal' on='doubleClick'}}>{{user.group.name}}</span>
+
+    <div class="pull-right">
+        {{#hold-button type="rectangle" action="remove"}}Hold to Delete{{/hold-button}}
+    </div>
+</td>
+{{user-view user=user isShowingModal=isShowingModal toggleAddModal=(action "toggleAddModal")}}
+{{user-edit
+user=user
+group=group
+groups=groups
+triggerSuggestions=triggerSuggestions
+refreshOptionsGroup="refreshOptionsGroup"
+itemSelectedGroup="itemSelectedGroup"
+isShowingModal=isShowingModal
+toggleAddModal='toggleAddModal'
+edit='edit'}}
