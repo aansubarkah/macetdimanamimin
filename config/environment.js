@@ -27,7 +27,7 @@ module.exports = function (environment) {
 			'default-src': "'none'",
 			'script-src': "'self' 'unsafe-inline' 'unsafe-eval' https://cdn.datatables.net https://code.jquery.com https://maxcdn.bootstrapcdn.com https://cdnjs.cloudflare.com *.googleapis.com maps.gstatic.com",
 			'font-src': "'self' https://maxcdn.bootstrapcdn.com https://cdn.datatables.net http://fonts.gstatic.com https://fonts.gstatic.com https://code.ionicframework.com",
-			'connect-src': "'self' http://localhost:8765 http://apimimin.dimanamacet.com",
+			'connect-src': "'self' http://localhost:8765 http://apimimin.macetdimana.com",
 			'img-src': "'self' *.googleapis.com maps.gstatic.com csi.gstatic.com *.twimg.com",
 			'style-src': "'self' 'unsafe-inline' https://code.ionicframework.com https://maxcdn.bootstrapcdn.com https://cdn.datatables.net fonts.googleapis.com map.gstatic.com",
 			'media-src': "'self'"
@@ -39,17 +39,17 @@ module.exports = function (environment) {
 		}
 	};
 
-	ENV['simple-auth'] = {
-		authorizer: 'simple-auth-authorizer:token',
+	ENV['ember-simple-auth'] = {
+		authorizer: 'authorizer:token',
 		//crossOriginWhitelist:['*'],
-		//crossOriginWhitelist: ['http://localhost:8765'],// @todo change this on production server
-		crossOriginWhitelist: ['http://apimimin.dimanamacet.com'],
+		crossOriginWhitelist: ['http://localhost:8765'],// @todo change this on production server
+		//crossOriginWhitelist: ['http://apimimin.macetdimana.com'],
 		store: 'session-store:local-storage'
 	};
 
-	ENV['simple-auth-token'] = {
-		//serverTokenEndpoint: 'http://localhost:8765/users/token',// @todo change this on production server
-		serverTokenEndpoint: 'http://apimimin.dimanamacet.com/users/token',
+	ENV['ember-simple-auth-token'] = {
+		serverTokenEndpoint: 'http://localhost:8765/users/token',// @todo change this on production server
+		//serverTokenEndpoint: 'http://apimimin.macetdimana.com/users/token',
 		identificationField: 'username',
 		passwordField: 'password',
 		tokenPropertyName: 'token',
@@ -57,8 +57,8 @@ module.exports = function (environment) {
 		authorizationHeaderName: 'Authorization',
 		headers: {},
 		refreshAccessTokens: true,
-		//serverTokenRefreshEndpoint: 'http://localhost:8765/users/token',// @todo change this on production server
-		serverTokenRefreshEndpoint: 'http://apimimin.dimanamacet.com/users/token',
+		serverTokenRefreshEndpoint: 'http://localhost:8765/users/token',// @todo change this on production server
+		//serverTokenRefreshEndpoint: 'http://apimimin.macetdimana.com/users/token',
 		tokenExpireName: 'exp',
 		refreshLeeway: 0, // Refresh the token 5 minutes (300s) before it expires.
 		timeFactor: 1000

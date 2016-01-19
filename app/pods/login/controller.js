@@ -1,14 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	session: Ember.inject.service('session:main'),
+	session: Ember.inject.service(),
 	password: '',
 	signInError: true,
 	siginLoading: true,
 	actions: {
 		authenticate: function () {
 			var credentials = this.getProperties('identification', 'password'),
-				authenticator = 'simple-auth-authenticator:jwt';
+				authenticator = 'authenticator:jwt';
 
 			//this.get('session').authenticate(authenticator, credentials);
 			//this.transitionToRoute('/');
