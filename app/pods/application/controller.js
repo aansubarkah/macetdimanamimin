@@ -4,7 +4,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	session: Ember.inject.service('session:main'),
+	session: Ember.inject.service('session'),
 	state: 'all',
 	queryParams: [
 		'state'
@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
 		},
 		invalidateSession: function () {
 			this.get('session').invalidate();
-			//this.transitionToRoute('index');
+			this.transitionToRoute('login');
 		}
 	}
 });
