@@ -8,6 +8,7 @@ moment.locale('id');
 var hashids = new Hashids("m4c3tsur4b4y4");
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
+    //beforeModel: function(){},
 	breadCrumb: {
 		title: 'Surabaya Traffic'
 	},

@@ -24,6 +24,13 @@ export default DS.Model.extend({
 	created: DS.attr('string'),
 	modified: DS.attr('string'),
 	info: DS.attr('string'),
+    twitID: DS.attr('number', {defaultValue: ''}),
+    twitPlaceID: DS.attr('string', {defaultValue: ''}),
+    twitTime: DS.attr('string', {defaultValue: ''}),
+    twitURL: DS.attr('string', {defaultValue: ''}),
+    twitPlaceName: DS.attr('string', {defaultValue: ''}),
+    isTwitPlacePrecise: DS.attr('boolean', {defaultValue: 0}),
+    twitImage: DS.attr('string', {defaultValue: ''}),
 	pinned: DS.attr('boolean', {defaultValue: 0}),
 	cleared: DS.attr('boolean', {defaultValue: 0}),
 	active: DS.attr('boolean', {defaultValue: 1})

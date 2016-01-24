@@ -45,7 +45,8 @@ module.exports = function (environment) {
 		//crossOriginWhitelist:['*'],
 		crossOriginWhitelist: ['http://localhost:8765'],// @todo change this on production server
 		//crossOriginWhitelist: ['http://apimimin.macetdimana.com'],
-		store: 'session-store:local-storage'
+		store: 'session-store:local-storage',
+        authenticationRoute: 'signin'
 	};
 
 	ENV['ember-simple-auth-token'] = {

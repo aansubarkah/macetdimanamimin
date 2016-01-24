@@ -121,5 +121,12 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 		return this.store.findAll('category').then(function (result) {
 			_this.set('category', result);
 		});
-	}
+
+        if (this.get('session').isAuthenticated) {
+            //return this._populateCurrentUser();
+            console.log('auth');
+        }else{
+            console.log('tidak');
+	    }
+    }
 });
