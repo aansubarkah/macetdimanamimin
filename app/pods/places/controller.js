@@ -63,8 +63,8 @@ export default Ember.Controller.extend({
 			var that = this;
 			that.markersForDisplay.addObject({
 				id: hashids.encode(new Date().getTime()),
-				lat: e.latLng.G,
-				lng: e.latLng.K,
+				lat: e.latLng.lat(),
+				lng: e.latLng.lng(),
 				title: 'New Place',
 				draggable: true,
 				infoWindow: {
@@ -73,13 +73,13 @@ export default Ember.Controller.extend({
 				},
 				click: function () {
 					that.toggleProperty('isAddRowVisible');
-					that.set('newPlaceLat', e.latLng.G);
-					that.set('newPlaceLng', e.latLng.K);
+					that.set('newPlaceLat', e.latLng.lat());
+					that.set('newPlaceLng', e.latLng.lng());
 				},
 				dragend: function (f) {
 					that.toggleProperty('isAddRowVisible');
-					that.set('newPlaceLat', f.latLng.G);
-					that.set('newPlaceLng', f.latLng.K);
+					that.set('newPlaceLat', f.latLng.lat());
+					that.set('newPlaceLng', f.latLng.lng());
 				}
 			});
 		},
