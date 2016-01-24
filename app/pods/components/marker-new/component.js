@@ -11,7 +11,7 @@ export default Ember.Component.extend({
 		this.set('newRespondentName', '');
 		this.set('newRespondentContact', '');
 		this.set('category_id', 1);
-		this.set('respondent_id', 0);
+		this.set('respondent_id', 11);// Suara Surabaya
 		this.set('weather_id', 1);
 		//this.set('lat', 0);
 		//this.set('lng', 0);
@@ -73,6 +73,8 @@ export default Ember.Component.extend({
 				this.set('alertMessages', 'Respondent is blank!');
 				return;
 			}
+
+            console.info(this.get('respondent_id'));
 
 			var pinned = 0;
 			if (this.get('newPinned')) {

@@ -14,8 +14,8 @@ Router.map(function () {
   this.route('marker');
   this.route('categories');
   this.route('category');
-  this.route('users');
-  this.route('user');
+  //this.route('users');
+  //this.route('user');
   this.route('respondents');
   this.route('respondent');
   this.route('groups');
