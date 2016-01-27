@@ -133,6 +133,7 @@ export default Ember.Controller.extend({
             const store = this.get('store');
             var that = this;
 
+            console.log(dataToSave);
             var marker = store.createRecord('marker', dataToSave);
 
             // @todo clear text field
