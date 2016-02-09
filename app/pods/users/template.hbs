@@ -1,40 +1,44 @@
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title">Users&nbsp;</h3>
-        <button type="button" class="btn btn-primary btn-xs" {{action 'toggleAdd'}}>
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-        </button>
-        <div class="box-tools">
-            <div class="input-group">
-                {{input type="text" classNames="form-control" placeholder="Search Username" value=query}}
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+        <div class="col-md-3 pull-left">
+            <h3 class="box-title">Users&nbsp;</h3>
+            <button type="button" class="btn btn-primary btn-xs" {{action 'toggleAdd'}}>
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="col-md-5 pull-right">
+            <div class="box-tools">
+                <div class="input-group">
+                    {{input type="text" classNames="form-control" placeholder="Search Username" value=query}}
+                    <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                </div>
             </div>
         </div>
     </div>
     <div class="box-body">
         <table class="table table-striped">
             <thead>
-            <tr>
-                <th width="10%">#</th>
-                <th width="30%">Username</th>
-                <th width="30%">Email</th>
-                <th width="30%">Group</th>
-            </tr>
+                <tr>
+                    <th width="10%">#</th>
+                    <th width="30%">Username</th>
+                    <th width="30%">Email</th>
+                    <th width="30%">Group</th>
+                </tr>
             </thead>
             <tbody>
-            {{#if isAddRowVisible}}
+                {{#if isAddRowVisible}}
                 <tr>
                     <td>0</td>
                     <td>{{focus-input
-                    type='text'
-                    class='form-control'
-                    placeholder='Insert new user here, press enter to submit'
-                    value=newName
-                    enter='createNew'
-                    }}</td>
+                        type='text'
+                        class='form-control'
+                        placeholder='Insert new user here, press enter to submit'
+                        value=newName
+                        enter='createNew'
+                        }}</td>
                 </tr>
-            {{/if}}
-            {{#each user as |user index|}}
+                {{/if}}
+                {{#each user as |user index|}}
                 {{user-item
                 editDatum='editDatum'
                 deleteDatum='deleteDatum'
@@ -46,7 +50,7 @@
                 groups=groups
                 refreshOptionsGroup="refreshOptionsGroup"
                 itemSelectedGroup="itemSelectedGroup"}}
-            {{/each}}
+                {{/each}}
             </tbody>
         </table>
     </div>
