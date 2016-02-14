@@ -10,5 +10,7 @@ export default Ember.Controller.extend({
         scaleGridLineColor : "rgba(0,0,0,.05)",
         //Number - Width of the grid lines
         scaleGridLineWidth : 1,
+        //String - A legend template
+        legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
     }
 });

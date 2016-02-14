@@ -18,21 +18,11 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
         // data to display as chart
         var headers = [];
-        for(var i=6; i>0;i--) {
+        for(var i=6; i>-1;i--) {
             var day = new Date();
             day.setDate(day.getDate()-i);
             headers.push(moment(day).format('dddd, Do MMMM YYYY'));
         }
-        var fillColors = [
-            'rgba(127, 191, 63, 0.2)',
-            'rgba(151, 187, 205, 0.2)',
-            'rgba(191, 63, 127, 0.2)'
-        ];
-        var strokeColors = [
-            'rgba(127, 191, 63, 1)',
-            'rgba(151, 187, 205, 1)',
-            'rgba(191, 63, 127, 1)'
-        ];
 
         var data = [];
         var i = 0;
@@ -41,14 +31,21 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
             item.get('value.weekly').forEach(function(it) {
                 dataset.push(it.val);
             });
+            // create rgb color
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            var fillColor = 'rgba(' + r + ',' + g + ',' + b +',0.2)';
+            var strokeColor = 'rgba(' + r + ',' + g + ',' + b +',0.2)';
+
             var datum = {
                 label: item.get('name'),
-                fillColor: fillColors[i],
-                strokeColor: strokeColors[i],
-                pointColor: strokeColors[i],
+                fillColor: fillColor,
+                strokeColor: strokeColor,
+                pointColor: strokeColor,
                 pointStrokeColor: '#fff',
                 pointHighlightFill: '#fff',
-                pointHighlightStroke: strokeColors[i],
+                pointHighlightStroke: strokeColor,
                 data: dataset
             };
             data.push(datum);
@@ -57,16 +54,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         var dataForChart = {
             labels: headers,
             datasets: data
-            /*datasets: [{
-                label: "Daily Report",
-                fillColor: "rgba(151,187,205,0.2)",
-                strokeColor: "rgba(151,187,205,1)",
-                pointColor: "rgba(151,187,205,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(151,187,205,1)",
-                data: datum
-            }]*/
         };
         controller.set('dataForChart', dataForChart);
     }
