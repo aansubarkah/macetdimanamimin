@@ -7,8 +7,8 @@ module.exports = function (environment) {
 		environment: environment,
 		baseURL: '/',
 		locationType: 'auto',
-        apiURL: 'http://localhost:8765',
-        //apiURL: 'http://apimimin.macetdimana.com',
+        //apiURL: 'http://localhost:8765',
+        apiURL: 'http://apimimin.macetdimana.com',
 		EmberENV: {
 			FEATURES: {
 				// Here you can enable experimental features on an ember canary build
@@ -51,8 +51,8 @@ module.exports = function (environment) {
 	};
 
 	ENV['ember-simple-auth-token'] = {
-		serverTokenEndpoint: 'http://localhost:8765/users/token',// @todo change this on production server
-		//serverTokenEndpoint: 'http://apimimin.macetdimana.com/users/token',
+		//serverTokenEndpoint: 'http://localhost:8765/users/token',// @todo change this on production server
+		serverTokenEndpoint: 'http://apimimin.macetdimana.com/users/token',
 		identificationField: 'username',
 		passwordField: 'password',
 		tokenPropertyName: 'token',
